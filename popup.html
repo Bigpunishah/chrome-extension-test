@@ -7,10 +7,67 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body>
+  <body class="border-outline">
     <div>
-      <h1>Can I Afford This Calc</h1>
+      <div class="rounded-background">
+        <h1 class="extention-title">Wish List</h1>
+      </div>
+
+      <div class="input-div">
+        <input
+          class="input-box"
+          type="text"
+          id="name_of_item"
+          name="name_of_item"
+          placeholder="Name Of Item"
+        />
+
+        <input
+          class="input-box"
+          type="number"
+          id="cost_amount"
+          name="cost_amount"
+          placeholder="Price"
+        />
+
+        <input
+          class="input-box"
+          type="text"
+          id="item_link"
+          name="item_link"
+          placeholder="Link"
+        />
+
+        <textarea
+          class="input-textarea"
+          name="item_description"
+          id="item_description"
+          placeholder="Item Description"
+          cols="10"
+          rows="3"
+          maxlength="1000"
+        ></textarea>
+
+        <!-- Update this to enter a date or remove entirely. -->
+        <form action="">
+          <p>
+            Check to set reminder date <br />to purchase
+            <input
+              type="checkbox"
+              name="yes_remind_radiobutton"
+              id="yes_remind_radiobutton"
+              value="yes"
+              checked="checked"
+            />
+          </p>
+        </form>
+      </div>
+      <button class="save-button">Add to Wishlist</button>
+      <div>
+        <button class="view-wl-button">View Wishlist</button>
+      </div>
     </div>
+
     <script src="popup.js"></script>
   </body>
 </html>

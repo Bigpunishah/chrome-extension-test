@@ -1,19 +1,123 @@
 body {
   margin: 0;
   padding: 0;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ! Not sure if i am going to keep it this way! */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("bg-img.png"); /* Background image */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: blur(105px); /* Apply blur effect */
+  z-index: -1; /* Place it behind the content */
+}
+
+/* Help see where I am working */
+.border-outline {
+  border: 2px solid rgb(213, 0, 0);
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.extention-title {
+  display: inline;
+  font-size: 14px;
+  text-align: center;
+}
+
+.rounded-background {
+  width: 150px;
+  height: 35px;
+  background-color: #7a1cac;
+  border-radius: 10px;
+  justify-content: center;
+  display: flex;
+  margin-block: 10px;
+  margin-left: 17.5%;
 }
 
 .input-div {
-  width: 300px;
-  height: 400px;
-  max-width: 300px;
-  max-height: 400px;
-  background-color: #f4f4f9;
-  color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #ddd;
+  display: grid;
+  padding: 10px;
+}
+
+.input-box {
+  width: 200px;
+  padding: 5px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.input-box:hover {
+  background-color: rgb(224, 222, 222);
+}
+
+.input-textarea {
+  width: 200px;
+  padding: 5px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  font-size: 16px;
+  border-color: black;
+  border-width: 2px;
+}
+
+.input-textarea:hover {
+  background-color: rgb(224, 222, 222);
+}
+
+.save-button {
+  width: 150px;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #4caf50;
+  border-color: #4caf50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.save-button:hover {
+  background-color: white;
+  color: #4caf50;
+  border-color: #4caf50;
+  transition: background-color 0.2s ease-in, color 0.5s ease-out;
+}
+
+.view-wl-button {
+  width: 120px;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #ad49e1;
+  border-color: #ad49e1;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.view-wl-button:hover {
+  background-color: white;
+  color: #ad49e1;
+  border-color: #ad49e1;
+  transition: background-color 0.2s ease-in, color 0.5s ease-out;
 }
