@@ -6,22 +6,6 @@ body {
   justify-content: center;
 }
 
-/* ! Not sure if i am going to keep it this way! */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("bg-img.png"); /* Background image */
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  filter: blur(105px); /* Apply blur effect */
-  z-index: -1; /* Place it behind the content */
-}
-
 /* Help see where I am working */
 .border-outline {
   border: 2px solid rgb(213, 0, 0);
@@ -55,7 +39,7 @@ body::before {
 .input-box {
   width: 200px;
   padding: 5px;
-  border-radius: 20px;
+  border-radius: 5px;
   margin-bottom: 20px;
   font-size: 16px;
 }
@@ -67,7 +51,7 @@ body::before {
 .input-textarea {
   width: 200px;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-bottom: 10px;
   font-size: 16px;
   border-color: black;
@@ -81,7 +65,7 @@ body::before {
 .save-button {
   width: 150px;
   padding: 5px;
-  border-radius: 20px;
+  border-radius: 5px;
   background-color: #4caf50;
   border-color: #4caf50;
   color: white;
@@ -103,7 +87,7 @@ body::before {
 .view-wl-button {
   width: 120px;
   padding: 5px;
-  border-radius: 20px;
+  border-radius: 5px;
   background-color: #ad49e1;
   border-color: #ad49e1;
   color: white;

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cooler Popup</title>
+    <title>Wish List Extension</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -14,34 +14,40 @@
       </div>
 
       <div class="input-div">
+        <label for="item-name">Item Name:</label>
         <input
           class="input-box"
           type="text"
-          id="name_of_item"
-          name="name_of_item"
+          id="item-name"
+          name="item-name"
+          required="true"
           placeholder="Name Of Item"
         />
 
+        <label for="item-price">Item Price:</label>
         <input
           class="input-box"
           type="number"
-          id="cost_amount"
-          name="cost_amount"
+          id="item-price"
+          name="item-price"
           placeholder="Price"
+          required="true"
         />
 
+        <label for="item-link">Item Link:</label>
         <input
           class="input-box"
           type="text"
-          id="item_link"
-          name="item_link"
+          id="item-link"
+          name="item-link"
           placeholder="Link"
         />
 
+        <label for="item-description">Description: </label>
         <textarea
           class="input-textarea"
-          name="item_description"
-          id="item_description"
+          name="item-description"
+          id="item-description"
           placeholder="Item Description"
           cols="10"
           rows="3"
@@ -62,9 +68,11 @@
           </p>
         </form>
       </div>
-      <button class="save-button">Add to Wishlist</button>
+      <button class="save-button" id="save-btn" type="submit">
+        Add to Wishlist
+      </button>
       <div>
-        <button class="view-wl-button">View Wishlist</button>
+        <button class="view-wl-button" id="view-wl-btn">View Wishlist</button>
       </div>
     </div>
 
