@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     dateElement.textContent = `Added on: ${itemData.dateSaved}`;
 
     const buttonLinkElement = document.createElement("button");
-    buttonLinkElement.textContent = "Buy";
+    buttonLinkElement.textContent = "Go";
     buttonLinkElement.addEventListener("click", () => {
       window.open(itemData.link, "_blank"); // Open the link in a new tab
     });

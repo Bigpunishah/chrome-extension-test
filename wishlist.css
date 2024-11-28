@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  font-family: "Parkinsans", sans-serif;
+  width: 300px;
+}
+
+/* .parkinsans {
+  font-family: "Parkinsans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+} */
+
+/* General container style */
+#itemsListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* List item styling */
+.list-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.list-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for item name */
+.list-item h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Styling for item description */
+.list-item p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Styling for item price */
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #17c211;
+  margin-bottom: 10px;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #3498db; /* Match the button hover color */
+  color: white;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.home-btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: translateY(-3px); /* Slight upward movement on hover */
+}
+
+/* Styling for the Wish List header */
+.wl-header {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Uppercase text for emphasis */
+  letter-spacing: 2px; /* Add some letter spacing for a modern touch */
+}
+
+/* Styling for the date */
+.date {
+  font-size: 0.875rem;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+/* Button container for Buy and Delete buttons */
+.list-item .button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Buy button specific styles */
+button:nth-child(1) {
+  background-color: #2ecc71;
+  color: white;
+}
+
+button:nth-child(1):hover {
+  background-color: #27ae60;
+}
+
+/* Delete button specific styles */
+button:nth-child(2) {
+  background-color: #e74c3c;
+  color: white;
+}
+
+button:nth-child(2):hover {
+  background-color: #c0392b;
+}

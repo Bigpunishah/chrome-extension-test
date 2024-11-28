@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wish List Extension</title>
     <link rel="stylesheet" href="popup.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body class="border-outline">
@@ -21,7 +27,8 @@
           id="item-name"
           name="item-name"
           required="true"
-          placeholder="Name Of Item"
+          placeholder=""
+          maxlength="50"
         />
 
         <label for="item-price">Item Price:</label>
@@ -30,7 +37,7 @@
           type="number"
           id="item-price"
           name="item-price"
-          placeholder="Price"
+          placeholder=""
           required="true"
         />
 
@@ -40,7 +47,7 @@
           type="text"
           id="item-link"
           name="item-link"
-          placeholder="Link"
+          placeholder=""
         />
 
         <label for="item-description">Description: </label>
@@ -48,25 +55,13 @@
           class="input-textarea"
           name="item-description"
           id="item-description"
-          placeholder="Item Description"
+          placeholder=""
           cols="10"
-          rows="3"
-          maxlength="1000"
+          rows="2"
+          maxlength="200"
         ></textarea>
 
         <!-- Update this to enter a date or remove entirely. -->
-        <form action="">
-          <p>
-            Check to set reminder date <br />to purchase
-            <input
-              type="checkbox"
-              name="yes_remind_radiobutton"
-              id="yes_remind_radiobutton"
-              value="yes"
-              checked="checked"
-            />
-          </p>
-        </form>
       </div>
       <button class="save-button" id="save-btn" type="submit">
         Add to Wishlist

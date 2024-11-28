@@ -1,107 +1,125 @@
+/* General reset and styling */
 body {
   margin: 0;
-  padding: 0;
-  padding-top: 10px;
+  padding: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding-top: 85px;
+  font-family: "Parkinsans", sans-serif;
+  width: 300px;
 }
 
-/* Help see where I am working */
-.border-outline {
-  border: 2px solid rgb(213, 0, 0);
-  padding: 10px;
-  width: 100%;
-  text-align: center;
+/* General container styling for the main content */
+#itemsListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for the header */
 .extention-title {
-  display: inline;
-  font-size: 14px;
+  font-size: 2.5rem;
+  font-weight: bold;
   text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.rounded-background {
-  width: 150px;
-  height: 35px;
-  background-color: #7a1cac;
-  border-radius: 10px;
-  justify-content: center;
-  display: flex;
-  margin-block: 10px;
-  margin-left: 17.5%;
-}
-
+/* Styling for the input container */
 .input-div {
-  display: grid;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Label and input styling */
+label {
+  font-size: 1rem;
+  color: #333;
 }
 
 .input-box {
-  width: 200px;
-  padding: 5px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  font-size: 16px;
-}
-
-.input-box:hover {
-  background-color: rgb(224, 222, 222);
-}
-
-.input-textarea {
-  width: 200px;
-  padding: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
   border-radius: 5px;
   margin-bottom: 10px;
-  font-size: 16px;
-  border-color: black;
-  border-width: 2px;
+  box-sizing: border-box;
 }
 
-.input-textarea:hover {
-  background-color: rgb(224, 222, 222);
+.input-box:focus {
+  outline: none;
+  border-color: #3498db;
 }
 
-.save-button {
-  width: 150px;
-  padding: 5px;
+/* Textarea styling */
+.input-textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #4caf50;
-  border-color: #4caf50;
+  margin-bottom: 10px;
+  resize: vertical;
+  min-height: 100px;
+  box-sizing: border-box;
+}
+
+.input-textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Styling for the checkbox form */
+form p {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+/* Button styling */
+button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
   color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 10px 0;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px);
+}
+
+/* Styling for the Add to Wishlist button */
+.save-button {
+  background-color: #2ecc71; /* Green */
 }
 
 .save-button:hover {
-  background-color: white;
-  color: #4caf50;
-  border-color: #4caf50;
-  transition: background-color 0.2s ease-in, color 0.5s ease-out;
+  background-color: #27ae60;
 }
 
+/* Styling for the View Wishlist button */
 .view-wl-button {
-  width: 120px;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: #ad49e1;
-  border-color: #ad49e1;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  cursor: pointer;
-  margin-bottom: 20px;
+  background-color: #e74c3c; /* Red */
 }
 
 .view-wl-button:hover {
-  background-color: white;
-  color: #ad49e1;
-  border-color: #ad49e1;
-  transition: background-color 0.2s ease-in, color 0.5s ease-out;
+  background-color: #c0392b;
 }
