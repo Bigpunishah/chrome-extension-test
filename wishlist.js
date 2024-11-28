@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const num_items_saved = Object.keys(localStorage).length; //Number of items saved
+  let num_items_saved = Object.keys(localStorage).length; //Number of items saved
   reassign_keys(); //Reassign keys if necessary on each page load
   loopToLoadDataItems();
+  console.log(localStorage);
 
   function populateRowData(itemData) {
     const itemsListContainer = document.getElementById("itemsListContainer"); // Container for items list
@@ -16,13 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const descriptionElement = document.createElement("p");
     descriptionElement.textContent = itemData.description;
 
-    const priceElement = document.createElement("span");
+    const priceElement = document.createElement("h2");
     priceElement.classList.add("price");
-    priceElement.textContent = itemData.price;
+    priceElement.textContent = "$" + itemData.price;
 
     const dateElement = document.createElement("span");
     dateElement.classList.add("date");
-    dateElement.textContent = `Added on: ${itemData.date}`;
+    dateElement.textContent = `Added on: ${itemData.dateSaved}`;
 
     const buttonLinkElement = document.createElement("button");
     buttonLinkElement.textContent = "Buy";
@@ -52,45 +53,71 @@ document.addEventListener("DOMContentLoaded", function () {
     //Individual deletetion only for now
     localStorage.removeItem("item" + item_key); //Remove the item from local storage
     reassign_keys(); //Reassign keys after deletion
+    // populateRowData(localStorage.getItem(`item${item_key}`)); //Repopulate the data - need this or the delete button
+    loopToLoadDataItems();
     location.reload(); //Refresh the page to display updated data
   }
 
   function reassign_keys() {
-    for (let i = 1; i <= num_items_saved; i++) {
-      //Check if item exists or was deleted
-      if (!localStorage.getItem(`item${i}`)) {
-        //Ensuring the following item exists or it was never created
-        if (localStorage.getItem(`item${i + 1}`)) {
-          const new_key = `item${i}`; //Make the new key previous to the deleted item
-          localStorage.setItem(new_key, localStorage.getItem(`item${i + 1}`)); //Assigning the new key to item
-          localStorage.removeItem(`item${i + 1}`); //Remove the old item from the local storage
+    let i = 0;
+
+    console.log("Going through loop to reassign");
+
+    // Loop to find missing items and reassign keys
+    while (true) {
+      // Check if the current item exists
+      if (localStorage.getItem(`item${i}`) === null) {
+        // If the current item doesn't exist, check for the next available item
+        let j = i + 1;
+        while (localStorage.getItem(`item${j}`) !== null) {
+          // If the next item exists, move it to the current position
+          localStorage.setItem(`item${i}`, localStorage.getItem(`item${j}`));
+
+          // Remove the old item after shifting it
+          localStorage.removeItem(`item${j}`);
+
+          // Move to the next index
+          i++;
+          j++;
         }
+        // If no more items are found, break the loop
+        break;
+      } else {
+        // Item exists, move to the next index
+        i++;
       }
     }
-    //End of reassign_keys function
+
+    console.log("Finished reassign_keys");
   }
 
   function loopToLoadDataItems() {
-    //Load items from localStorage and display them in a table
+    // Check if there are any items saved (num_items_saved should be set somewhere in your code)
     if (num_items_saved > 0) {
-      //Checking if localStorage has values
-      for (let i = 1; i <= num_items_saved; i++) {
-        //For loop to populate rows with data
-        const itemData = JSON.parse(localStorage.getItem(`item` + i)); //Get item data from localStorage based on key
+      let i = 0;
 
-        populateRowData(itemData); //Format and populate row data
+      // Loop through and load each item from localStorage
+      while (localStorage.getItem(`item${i}`) !== null) {
+        // Get item data from localStorage (assuming data is JSON stringified)
+        let itemData = JSON.parse(localStorage.getItem(`item${i}`));
+        itemData.item_key = i; //Reassigning the item key for when an item is/was deleted
+
+        // Populate the row with the retrieved item data
+        populateRowData(itemData);
+
+        // Move to the next index
+        i++;
       }
     } else {
+      location.href = "popup.html"; //Redirect to the popup page if no items are saved yet
       alert("No items saved yet!");
     }
+    //End of loopToLoadDataItems function
   }
 
   function clearAllItems() {
-    for (let i = 0; i <= num_items_saved; i++) {
-      localStorage.removeItem(`item${i}`); //Remove all items from localStorage
-      location.href("popup.html"); //Redirect to popup.html to add new items (will clear the current items as well)
-      // location.reload(); //Refresh the page to display updated data
-    }
+    localStorage.clear(); //Clear all items from local storage
+    location.reload(); //Refresh the page to display updated data
   }
 
   //Add event listener for clear all items button
