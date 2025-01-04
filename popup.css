@@ -1,15 +1,14 @@
 /* General reset and styling */
 body {
   margin: 0;
-  padding: 10px;
+  /* padding: 5px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 96vh;
   background-color: #f4f4f4;
-  padding-top: 85px;
   font-family: "Parkinsans", sans-serif;
-  width: 300px;
+  width: 250px;
 }
 
 /* General container styling for the main content */
@@ -40,7 +39,7 @@ body {
 .input-div {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
 }
 
 /* Label and input styling */
@@ -117,9 +116,9 @@ button:hover {
 
 /* Styling for the View Wishlist button */
 .view-wl-button {
-  background-color: #e74c3c; /* Red */
+  background-color: #a13ccd; /* Purple */
 }
 
 .view-wl-button:hover {
-  background-color: #c0392b;
+  background-color: #932bc0;
 }
